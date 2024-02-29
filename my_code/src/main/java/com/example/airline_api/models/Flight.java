@@ -88,8 +88,7 @@ public class Flight {
         this.passengers = passengers;
     }
 
-
-// Methods to add and remove a passenger from flights
+    // Methods to add and remove a passenger from flights
     public void addPassenger(Passenger passenger){
         this.passengers.add(passenger);
     }
