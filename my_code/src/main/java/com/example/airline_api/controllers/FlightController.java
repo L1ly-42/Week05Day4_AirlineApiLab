@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/flights")
@@ -26,8 +27,8 @@ public class FlightController {
 
     // Display a specific flight
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Flight> getFlightById(){
-        return null;
+    public ResponseEntity<Flight> getFlightById(@PathVariable Long id){
+        return new ResponseEntity<>(flightService.getFlight(id).get(), HttpStatus.OK);
     }
 
     // Add details of a new flight
