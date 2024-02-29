@@ -2,6 +2,7 @@ package com.example.airline_api.controllers;
 
 import com.example.airline_api.models.Flight;
 import com.example.airline_api.models.Passenger;
+import com.example.airline_api.models.PassengerDTO;
 import com.example.airline_api.services.PassengerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,13 +28,14 @@ public class PassengerController {
     // Display specific passenger details
     @GetMapping(value = "/{id}")
     public ResponseEntity<Passenger> getPassengerById(@PathVariable Long id) {
-        return new ResponseEntity<>(passengerService.getPassenger(id).get(), HttpStatus.OK);
+        return new ResponseEntity<>(passengerService.getPassenger(id), HttpStatus.OK);
     }
 
     // Add a new passenger
     @PostMapping
-    public ResponseEntity<Passenger> addNewPassenger(){
-        return null;
+    public ResponseEntity<Passenger> addNewPassenger(@RequestBody PassengerDTO passengerDTO){
+        Passenger passenger = passengerService.savePassenger(passengerDTO);
+        return new ResponseEntity<>(passenger, HttpStatus.CREATED);
     }
 
 }

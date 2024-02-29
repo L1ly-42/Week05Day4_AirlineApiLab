@@ -10,7 +10,7 @@ import java.util.List;
 @Table(name = "passengers")
 public class Passenger {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column
@@ -70,5 +70,13 @@ public class Passenger {
         this.flights = flights;
     }
 
+    public void addFlight(Flight flight){
+        this.flights.add(flight);
+    }
 
+    public void removeFlight(Flight flight) {
+        this.flights.remove(flights);
+
+
+    }
 }

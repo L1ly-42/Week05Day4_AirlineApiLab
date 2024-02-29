@@ -1,5 +1,6 @@
 package com.example.airline_api.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PassengerDTO {
