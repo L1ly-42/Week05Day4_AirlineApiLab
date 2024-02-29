@@ -1,7 +1,6 @@
 package com.example.airline_api.controllers;
 
-import com.example.airline_api.models.Flight;
-import com.example.airline_api.models.PassengerIdDTO;
+import com.example.airline_api.models.*;
 import com.example.airline_api.services.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,8 +33,9 @@ public class FlightController {
 
     // Add details of a new flight
     @PostMapping
-    public ResponseEntity<Flight> addNewFlight(){
-        return null;
+    public ResponseEntity<Flight> addNewFlight(@RequestBody FlightDTO flightDTO){
+        Flight flight = flightService.saveFlight(flightDTO);
+        return new ResponseEntity<>(flight, HttpStatus.CREATED);
     }
 
     // Book passenger on a flight
