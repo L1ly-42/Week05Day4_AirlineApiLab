@@ -35,6 +35,7 @@ public class FlightService {
         Flight targetFlight = flightRepository.findById(flightId).get();
         Passenger targetPassenger = passengerRepository.findById(passengerIdDTO.getPassengerId()).get();
         targetFlight.addPassenger(targetPassenger);
+        flightRepository.save(targetFlight);
     }
 
     public Flight saveFlight(FlightDTO flightDTO) {
