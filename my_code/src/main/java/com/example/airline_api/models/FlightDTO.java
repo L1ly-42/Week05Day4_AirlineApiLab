@@ -1,9 +1,4 @@
 package com.example.airline_api.models;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.*;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class FlightDTO {

@@ -1,6 +1,5 @@
 package com.example.airline_api.controllers;
 
-import com.example.airline_api.models.Flight;
 import com.example.airline_api.models.Passenger;
 import com.example.airline_api.models.PassengerDTO;
 import com.example.airline_api.services.PassengerService;
