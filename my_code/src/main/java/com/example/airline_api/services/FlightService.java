@@ -4,7 +4,11 @@ import com.example.airline_api.models.*;
 import com.example.airline_api.repositories.FlightRepository;
 import com.example.airline_api.repositories.PassengerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
@@ -41,6 +45,9 @@ public class FlightService {
         }
         return flightRepository.save(newFlight);
 
+    }
+    public void deleteFlight(Long id) {
+        flightRepository.deleteById(id);
     }
 
 }
