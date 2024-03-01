@@ -35,6 +35,9 @@ public class FlightService {
         flightRepository.save(targetFlight);
     }
 
+    // you made this way more complicated than it needed to be! All you needed was to take a Flight object as input
+    // and then to just return flightRepository.save(newFlight);
+    //this is because usually when a new flight becomes available there will not already be people booked onto it!
     public Flight saveFlight(FlightDTO flightDTO) {
         Flight newFlight = new Flight(flightDTO.getDestination(), flightDTO.getCapacity(), flightDTO.getDepartureDate(), flightDTO.getDepartureTime());
         for (long passengerId : flightDTO.getPassengerIds()) {
